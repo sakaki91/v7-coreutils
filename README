@@ -1,0 +1,10 @@
+Version 7 Coreutils.
+====================
+
+Lightweight system utilities with classic aesthetics, written in C.
+
+utilities currently available:
+------------------------------
+  * l       // List of directories
+  * cl      // Clears the Terminal/TTY
+  * touch   // Creates an empty file.
