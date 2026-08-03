@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[]){
     if (argc < 2){
-        fprintf(stdout, "usage: mkdir <directory>\n");
+        fprintf(stderr, "usage: mkdir <directory>\n");
         exit(EXIT_FAILURE);
     } else {
         if (mkdir(argv[1], 0755) == -1){
