@@ -1,6 +1,6 @@
 Version 7 Coreutils.
 ====================
-Lightweight system utilities with classic aesthetics, written in C.
+Lightweight system utilities with a classic aesthetic, written in C for UNIX-like systems.
 
 Utilities currently available:
 ------------------------------
