@@ -4,6 +4,8 @@ Lightweight system utilities with a classic aesthetic, written in C for UNIX-lik
 
 Utilities currently available:
 ------------------------------
-l     || List of directories.
-cl    || Clears the Terminal/TTY.
-touch || Creates an empty file.
+ cat   || Read a file.
+ clear || Clears the Terminal/TTY.
+ l     || List of directories.
+ mkdir || Create a directory.
+ touch || Creates an empty file.
