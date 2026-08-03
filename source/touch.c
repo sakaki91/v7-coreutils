@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// touch - v1.1
+// touch - v1.2
 // Copyright (C) by Sakaki, 2026.
 // LICENSE: BSD 3-Clause License <https://opensource.org/license/bsd-3-clause>
 
@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
         fprintf(stderr, "usage: touch <file>\n");
         exit(EXIT_FAILURE);
     } else {
-        new_file = fopen(argv[1], "w");
+        new_file = fopen(argv[1], "a");
         if (new_file == NULL){
             perror("touch");
             exit(EXIT_FAILURE);
