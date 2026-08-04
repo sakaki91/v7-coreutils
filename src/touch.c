@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// touch - v1.3
+// touch - v1.4
 // Copyright (C) by Sakaki, 2026.
 // LICENSE: BSD 3-Clause License <https://opensource.org/license/bsd-3-clause>
 
@@ -16,9 +16,9 @@ int main(int argc, char *argv[]){
             if (new_file == NULL){
                 perror("touch");
                 exit(EXIT_FAILURE);
-            }  
+            }
+            fclose(new_file);
         }
-        fclose(new_file);
     }
     return 0;
 }
