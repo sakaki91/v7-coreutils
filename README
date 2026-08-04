@@ -6,6 +6,7 @@ Utilities currently available:
 ------------------------------
  cat   || Read a file.
  clear || Clears the Terminal/TTY.
+ echo  || Prints messages on the screen.
  ls    || List of directories.
  mkdir || Create a directory.
  touch || Creates an empty file.
