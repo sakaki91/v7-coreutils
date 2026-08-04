@@ -10,3 +10,4 @@ Utilities currently available:
  ls    || List of directories.
  mkdir || Create a directory.
  touch || Creates an empty file.
+ uname || Displays Kernel information.
