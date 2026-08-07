@@ -1,13 +1,5 @@
 Version 7 Coreutils.
 ====================
-Lightweight system utilities with a classic aesthetic, written in C for UNIX-like systems.
 
-Utilities currently available:
-------------------------------
- cat   || Read a file.
- clear || Clears the Terminal/TTY.
- echo  || Prints messages on the screen.
- ls    || List of directories.
- mkdir || Create a directory.
- touch || Creates an empty file.
- uname || Displays Kernel information.
+! Found any bugs? Please report them: https://github.com/sakaki91/version7-coreutils/issues
+! Need help? See the documentation: https://sakaki91.github.io/src/version7-coreutils-wiki.html
