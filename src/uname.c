@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <sys/utsname.h>
 
-// uname - v2.0
+// uname - v2.1
 // Copyright (C) by Sakaki, 2026.
 // LICENSE: BSD 3-Clause License <https://opensource.org/license/bsd-3-clause>
 
@@ -23,50 +23,57 @@ int main(int argc, char *argv[]){
     if (argc < 2){
         printf("%s\n", buffer.sysname);
     } else {
-        if (strcmp(argv[1], "-h") == 0){
-            fprintf(stdout, "\033[4moperations:\033[0m\n"
-                            "-h   show this message.\n"
-                            "-s   print the kernel name.\n"
-                            "-r   print the kernel release.\n"
-                            "-v   print the kernel version.\n"
-                            "-n   print the hostname.\n"
-                            "-m   print the machine hardware name.\n\n"
-                            "usage: uname <operation>\n");
-            exit(EXIT_SUCCESS);
-        }
-        while ((args = getopt(argc, argv, "srvnm")) != -1){
-            switch (args){
-                case 's':
+        while ((args = getopt(argc, argv, "hsrvnm")) != -1){
+            if (args == 'h'){
+                fprintf(stdout, "\033[4moperations:\033[0m\n"
+                                "-h   show this message.\n"
+                                "-s   print the kernel name.\n"
+                                "-r   print the kernel release.\n"
+                                "-v   print the kernel version.\n"
+                                "-n   print the hostname.\n"
+                                "-m   print the machine hardware name.\n\n"
+                                "usage: uname <operation>\n");
+                exit(EXIT_SUCCESS);
+            } else {
+                if (args == 's'){
                     s = true;
-                    break;
-                case 'r':
+                }
+                if (args == 'r'){
                     r = true;
-                    break;
-                case 'v':
+                }
+                if (args == 'v'){
                     v = true;
-                    break;
-                case 'n':
+                }
+                if (args == 'n'){
                     n = true;
-                    break;
-                case 'm':
+                }
+                if (args == 'm'){
                     m = true;
-                    break;
+                }
             }
         }
+        char *isa;
+        if (isatty(1)){
+            isa = "%s "; 
+        } else {
+            isa = "%s";
+        }
         if (s == true){
-            printf("%s", buffer.sysname);
+            printf(isa, buffer.sysname);
         }
         if (r == true){
-            printf("%s", buffer.release);
+            printf(isa, buffer.release);
         }
         if (v == true){
-            printf("%s", buffer.version);
+            printf(isa, buffer.version);
         }
         if (n == true){
-            printf("%s", buffer.nodename);
+            printf(isa, buffer.nodename);
         } 
         if (m == true){
-            printf("%s", buffer.machine);
-        } printf ("\n");
+            printf(isa, buffer.machine);
+        } 
+        printf("\n");
     }
+    return 0;
 }
